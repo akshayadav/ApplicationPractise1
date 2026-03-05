@@ -12,7 +12,10 @@ import SwiftData
 struct NRIOneSample1App: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Event.self,
+            Property.self,
+            Deal.self,
+            Service.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
