@@ -1,14 +1,17 @@
 //
-//  HomeView.swift
+//  HomeView_Backup.swift
 //  NRIOneSample1
 //
 //  Created by Akshay Yadav on 3/5/26.
-//
+//  This is a backup file - NOT USED
 
 import SwiftUI
 import SwiftData
 
-struct HomeView: View {
+// BACKUP FILE - These structs are renamed to avoid conflicts
+// The actual HomeView is in ViewsHomeView.swift
+
+struct HomeView_Backup: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var events: [Event]
     @State private var showingOngoing = true
@@ -26,7 +29,7 @@ struct HomeView: View {
                     // Hero Image Section with Event Toggle
                     ZStack(alignment: .bottom) {
                         // Background Image Placeholder - You can replace "heroImage" with your asset name
-                        Image("image2")
+                        Image("heroImage")
                             .resizable()
                             .scaledToFill()
                             .frame(height: 200)
@@ -43,9 +46,7 @@ struct HomeView: View {
                                             Text("Add 'heroImage' to Assets")
                                                 .font(.caption)
                                                 .foregroundStyle(.gray)
-                                                
                                         }
-                                        .hidden()
                                     }
                             }
                         
@@ -119,7 +120,7 @@ struct HomeView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(filteredEvents) { event in
-                                SimpleEventCardView(event: event)
+                                SimpleEventCardView_Backup(event: event)
                             }
                         }
                         .padding(.horizontal, 20)
@@ -169,7 +170,7 @@ struct HomeView: View {
                         
                         // First Row
                         HStack(alignment: .top, spacing: 12) {
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "house.fill",
                                 title: "Buy/Sell",
                                 color: .blue,
@@ -177,7 +178,7 @@ struct HomeView: View {
                             )
                             .frame(maxWidth: .infinity)
                             
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "calendar.badge.clock",
                                 title: "Monthly Deals",
                                 color: Color(red: 0.7, green: 0.2, blue: 0.2),
@@ -185,7 +186,7 @@ struct HomeView: View {
                             )
                             .frame(maxWidth: .infinity)
                             
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "sofa.fill",
                                 title: "Interiors",
                                 color: .purple,
@@ -197,7 +198,7 @@ struct HomeView: View {
                         
                         // Second Row
                         HStack(alignment: .top, spacing: 12) {
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "arrow.triangle.swap",
                                 title: "Relocate",
                                 color: .blue,
@@ -205,7 +206,7 @@ struct HomeView: View {
                             )
                             .frame(maxWidth: .infinity)
                             
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "calendar",
                                 title: "Weekly Deals",
                                 color: Color(red: 0.7, green: 0.2, blue: 0.2),
@@ -213,7 +214,7 @@ struct HomeView: View {
                             )
                             .frame(maxWidth: .infinity)
                             
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "building.columns.fill",
                                 title: "Home Loans",
                                 color: .purple,
@@ -231,7 +232,7 @@ struct HomeView: View {
                             Color.clear
                                 .frame(maxWidth: .infinity)
                             
-                            SimpleServiceTileView(
+                            SimpleServiceTileView_Backup(
                                 icon: "shield.fill",
                                 title: "Insurance",
                                 color: .purple,
@@ -311,7 +312,7 @@ struct HomeView: View {
     }
 }
 
-struct SectionHeaderView: View {
+struct SectionHeaderView_Backup: View {
     let title: String
     
     var body: some View {
@@ -327,7 +328,7 @@ struct SectionHeaderView: View {
 }
 
 // Simple Service Tile - No Gradients, Solid Colors
-struct SimpleServiceTileView: View {
+struct SimpleServiceTileView_Backup: View {
     let icon: String
     let title: String
     let color: Color
@@ -364,7 +365,7 @@ struct SimpleServiceTileView: View {
 }
 
 // Simple Event Card - Cleaner Design
-struct SimpleEventCardView: View {
+struct SimpleEventCardView_Backup: View {
     let event: Event
     
     var body: some View {
@@ -458,6 +459,6 @@ struct SimpleEventCardView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView_Backup()
         .modelContainer(for: [Event.self, Property.self, Deal.self, Service.self])
 }
