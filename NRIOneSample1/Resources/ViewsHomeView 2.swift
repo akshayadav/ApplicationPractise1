@@ -306,8 +306,20 @@ struct HomeView_Backup: View {
                 eventDescription: "Global investment opportunities"
             )
             
+            let event3 = Event(
+                title: "NRI Property Expo",
+                location: "Danube, Dubai",
+                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 8))!,
+                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 10))!,
+                venueName: "The Domain Hotel",
+                venueAddress: "Business Bay",
+                isOngoing: true,
+                eventDescription: "Exclusive property showcase for NRI investors"
+            )
+            
             modelContext.insert(event1)
             modelContext.insert(event2)
+            modelContext.insert(event3)
         }
     }
 }

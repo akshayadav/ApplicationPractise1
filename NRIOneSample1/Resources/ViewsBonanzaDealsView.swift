@@ -20,12 +20,29 @@ struct BonanzaDealsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 16) {
-                    ForEach(filteredDeals) { deal in
-                        DealCardView(deal: deal)
+                VStack(spacing: 16) {
+                    if filteredDeals.isEmpty {
+                        ContentUnavailableView(
+                            "No Deals Available",
+                            systemImage: "tag.slash",
+                            description: Text("Check back later for exciting deals!")
+                        )
+                    } else {
+                        // Carousel showing at least 2 cards
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 16) {
+                                ForEach(filteredDeals) { deal in
+                                    DealCardView(deal: deal)
+                                        .containerRelativeFrame(.horizontal, count: 2, spacing: 16)
+                                }
+                            }
+                            .scrollTargetLayout()
+                            .padding(.horizontal, 20)
+                        }
+                        .scrollTargetBehavior(.viewAligned)
                     }
                 }
-                .padding()
+                .padding(.vertical)
             }
             .navigationTitle(dealType.rawValue)
             .navigationBarTitleDisplayMode(.large)
@@ -46,7 +63,36 @@ struct BonanzaDealsView: View {
     
     private func addSampleDealsIfNeeded() {
         if deals.isEmpty {
+            // Add multiple sample deals for better carousel demonstration
             addSampleDeal()
+            
+            // Add additional deals
+            let deal2 = Deal(
+                title: "\(dealType.rawValue) - Modern Villa",
+                category: dealType,
+                discountPercentage: 20,
+                originalPrice: 750000,
+                discountedPrice: 600000,
+                startDate: Date(),
+                endDate: Calendar.current.date(byAdding: .day, value: 25, to: Date())!,
+                dealDescription: "Stunning villa with pool and garden. Perfect for families looking for luxury living.",
+                specialFeatures: ["Pool", "Garden", "Smart Home", "Gated Community"]
+            )
+            
+            let deal3 = Deal(
+                title: "\(dealType.rawValue) - Penthouse Suite",
+                category: dealType,
+                discountPercentage: 18,
+                originalPrice: 1200000,
+                discountedPrice: 984000,
+                startDate: Date(),
+                endDate: Calendar.current.date(byAdding: .day, value: 20, to: Date())!,
+                dealDescription: "Exclusive penthouse with panoramic city views. Luxurious finishes throughout.",
+                specialFeatures: ["Panoramic Views", "Premium Finishes", "Private Elevator"]
+            )
+            
+            modelContext.insert(deal2)
+            modelContext.insert(deal3)
         }
     }
     
