@@ -245,97 +245,56 @@ struct HomeView: View {
                 startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 7))!,
                 endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 8))!,
                 venueName: "The Domain Hotel",
-                venueAddress: "Business Bay",
+                venueAddress: "Sunnyvale, CA",
                 isOngoing: true,
                 eventDescription: "Exclusive property showcase for NRI investors"
             )
             
+            // Ongoing Events (4 events)
             let event2 = Event(
-                title: "Investment Summit",
-                location: "Mumbai, India",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 5))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 7))!,
-                venueName: "Grand Hyatt",
-                venueAddress: "BKC",
-                isOngoing: true,
-                eventDescription: "Real estate investment opportunities"
-            )
-            
-            let event3 = Event(
-                title: "Property Fair",
-                location: "Bangalore, India",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 4))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 6))!,
-                venueName: "Convention Center",
-                venueAddress: "Whitefield",
-                isOngoing: true,
-                eventDescription: "Tech city real estate showcase"
-            )
-            
-            let event7 = Event(
-                title: "Real Estate Festival",
-                location: "Delhi, India",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 3))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 6))!,
-                venueName: "Taj Palace",
-                venueAddress: "Connaught Place",
-                isOngoing: true,
-                eventDescription: "Capital city property showcase"
-            )
-            
-            // Upcoming Events (4 events)
-            let event4 = Event(
                 title: "NRI Property Expo",
-                location: "Austin, USA",
+                location: "Danube, Dubai",
                 startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 14))!,
                 endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 15))!,
-                venueName: "Hotel Indigo",
-                venueAddress: "Austin",
+                venueName: "Indigo Downtown",
+                venueAddress: "Austin,TX",
+                isOngoing: true,
+                eventDescription: "Exclusive property showcase for NRI investors"
+            )
+
+            // Upcoming Events (4 events)
+            
+            let event3 = Event(
+                title: "NRI Property Expo",
+                location: "Danube, Dubai",
+                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 21))!,
+                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 22))!,
+                venueName: "APA Woodbridge",
+                venueAddress: "Edison, NJ",
                 isOngoing: false,
-                eventDescription: "Global investment opportunities"
+                eventDescription: "Exclusive property showcase for NRI investors"
             )
             
-            let event5 = Event(
-                title: "Real Estate Expo",
-                location: "London, UK",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 20))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 21))!,
-                venueName: "Excel London",
-                venueAddress: "Royal Victoria Dock",
-                isOngoing: false,
-                eventDescription: "European property showcase"
-            )
-            
-            let event6 = Event(
-                title: "Luxury Homes Fair",
-                location: "Singapore",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 25))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 26))!,
+            let event4 = Event(
+                title: "NRI Property Expo",
+                location: "Indian Property Show, Singapore",
+                startDate: calendar.date(from: DateComponents(year: 2026, month: 4, day: 25))!,
+                endDate: calendar.date(from: DateComponents(year: 2026, month: 4, day: 26))!,
                 venueName: "Marina Bay Sands",
-                venueAddress: "Marina Bay",
+                venueAddress: "Singapore",
                 isOngoing: false,
-                eventDescription: "Premium properties in Asia"
+                eventDescription: "Exclusive property showcase for NRI investors"
             )
             
-            let event8 = Event(
-                title: "Property Investment Forum",
-                location: "Toronto, Canada",
-                startDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 28))!,
-                endDate: calendar.date(from: DateComponents(year: 2026, month: 3, day: 29))!,
-                venueName: "Fairmont Royal York",
-                venueAddress: "Downtown Toronto",
-                isOngoing: false,
-                eventDescription: "North American real estate opportunities"
-            )
             
             modelContext.insert(event1)
             modelContext.insert(event2)
             modelContext.insert(event3)
             modelContext.insert(event4)
-            modelContext.insert(event5)
-            modelContext.insert(event6)
-            modelContext.insert(event7)
-            modelContext.insert(event8)
+//            modelContext.insert(event5)
+//            modelContext.insert(event6)
+//            modelContext.insert(event7)
+//            modelContext.insert(event8)
         }
     }
 }
